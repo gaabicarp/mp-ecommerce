@@ -48,9 +48,9 @@ app.post('/pagar', urlencodedParser, function(req, res){
             quantity: 1,
             unit_price: JSON.parse(req.body.price),
             picture_url: req.body.img,
-            external_reference: 'gaabicarp@gmail.com'
             }
         ],
+        external_reference: 'gaabicarp@gmail.com',
         payer:{
             name: 'Lalo',
             surname: 'Landa',
