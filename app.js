@@ -38,7 +38,7 @@ app.get('/failure', function(req,res){
 })
 
 app.post('/pagar', urlencodedParser, function(req, res){
-    console.log(req.body)
+    // console.log(req.body)
     let Preference = {
         items: [
             {
@@ -47,7 +47,7 @@ app.post('/pagar', urlencodedParser, function(req, res){
             description: "Dispositivo móvil de Tienda e-commerce",
             quantity: 1,
             unit_price: JSON.parse(req.body.price),
-            picture_url: req.body.img,
+            picture_url: 'https://mpgabi.herokuapp.com' + req.body.img,
             }
         ],
         external_reference: 'gaabicarp@gmail.com',
@@ -95,7 +95,7 @@ app.post('/pagar', urlencodedParser, function(req, res){
 })
 
 app.post('/webhook', function(req, res){
-    console.log(req.query);
+    console.log('webhook', req.query);
     res.status(200);
 })
 
