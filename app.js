@@ -95,8 +95,9 @@ app.post('/pagar', urlencodedParser, function(req, res){
 })
 
 app.post('/webhook', function(req, res){
-    console.log('webhook', req.query);
-    console.log('todo',req)
+    console.log(req.query);
+    console.log(req.body);
+    // console.log('todo',req)
     res.status(200);
 })
 
