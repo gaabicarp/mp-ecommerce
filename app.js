@@ -89,10 +89,10 @@ app.post('/pagar', urlencodedParser, function(req, res){
 
     console.log(Preference);
 
-    // mercadopago.preferences.create(Preference).then(data=>{
-    //     // console.log(data.body.init_point);
-    //     res.redirect(data.body.init_point);
-    // })
+    mercadopago.preferences.create(Preference).then(data=>{
+        // console.log(data.body.init_point);
+        res.redirect(data.body.init_point);
+    })
     
 })
 
@@ -100,7 +100,7 @@ app.post('/webhook', function(req, res){
     console.log(req.query);
     console.log(req.body);
     // console.log('todo',req)
-    res.status(200);
+    res.status(201).json(req.body);
 })
 
 app.use(express.static('assets'));
