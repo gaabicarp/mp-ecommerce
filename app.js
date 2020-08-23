@@ -26,7 +26,7 @@ app.get('/detail', function (req, res) {
 });
 
 app.get('/success', function(req,res){
-    res.render('success')
+    res.render('success', req.query)
 })
 
 app.get('/pending', function(req,res){
@@ -66,9 +66,9 @@ app.post('/pagar', urlencodedParser, function(req, res){
             }
         },
         back_urls:{
-            success: 'http://localhost:3000/success',
-            pending: 'http://localhost:3000/pending',
-            failure: 'http://localhost:3000/failure',
+            success: 'https://mpgabi.herokuapp.com/success',
+            pending: 'https://mpgabi.herokuapp.com/pending',
+            failure: 'https://mpgabi.herokuapp.com/failure',
         },
         auto_return: 'approved',
         payment_methods:{
@@ -84,7 +84,7 @@ app.post('/pagar', urlencodedParser, function(req, res){
             ],
             installments: 6
         },
-        notification_url: 'localhost:3000/webhook'
+        notification_url: 'https://mpgabi.herokuapp.com/webhook'
         }
 
     mercadopago.preferences.create(Preference).then(data=>{
