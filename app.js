@@ -103,4 +103,6 @@ app.use(express.static('assets'));
  
 app.use('/assets', express.static(__dirname + '/assets'));
  
-app.listen(3000);
+app.listen((process.env.PORT || 3000), function(){
+    console.log('listening');
+});
