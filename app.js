@@ -84,7 +84,7 @@ app.post('/pagar', urlencodedParser, function(req, res){
             ],
             installments: 6
         },
-        notification_url: 'https://mpgabi.herokuapp.com/webhook?source_news=webhooks'
+        notification_url: 'https://mpgabi.herokuapp.com/webhook'
         }
 
     console.log(Preference);
@@ -96,11 +96,17 @@ app.post('/pagar', urlencodedParser, function(req, res){
     
 })
 
-app.post('/webhook', function(req, res){
-    console.log(req.query);
-    console.log(req.body);
-    // console.log('todo',req)
-    res.status(201).json(req.body);
+app.post('/webhook', function (req, res) {
+    mercadopago.ipn.manage(req).then(function (data) {
+        console.log(data);
+      res.render('jsonOutput', {
+        result: data
+      });
+    }).catch(function (error) {
+      res.render('500', {
+        error: error
+      });
+    });
 })
 
 app.use(express.static('assets'));
