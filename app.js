@@ -87,10 +87,12 @@ app.post('/pagar', urlencodedParser, function(req, res){
         notification_url: 'https://mpgabi.herokuapp.com/webhook?source_news=webhooks'
         }
 
-    mercadopago.preferences.create(Preference).then(data=>{
-        // console.log(data.body.init_point);
-        res.redirect(data.body.init_point);
-    })
+    console.log(Preference);
+
+    // mercadopago.preferences.create(Preference).then(data=>{
+    //     // console.log(data.body.init_point);
+    //     res.redirect(data.body.init_point);
+    // })
     
 })
 
