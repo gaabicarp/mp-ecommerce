@@ -99,7 +99,7 @@ app.post('/pagar', urlencodedParser, function(req, res){
 app.post('/webhook', function (req, res) {
     mercadopago.ipn.manage(req).then(function (data) {
         console.log(data);
-      res.render('jsonOutput', {
+      res.render({
         result: data
       });
     }).catch(function (error) {
@@ -116,3 +116,6 @@ app.use('/assets', express.static(__dirname + '/assets'));
 app.listen((process.env.PORT || 3000), function(){
     console.log('listening');
 });
+
+
+
