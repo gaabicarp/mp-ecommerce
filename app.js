@@ -10,7 +10,7 @@ mercadopago.configure({
  
 var app = express();
 
-var urlencodedParser = bodyParser.urlencoded({extended : false})
+var urlencodedParser = bodyParser.urlencoded({extended : true})
 
 
  
