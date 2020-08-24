@@ -96,10 +96,10 @@ app.post('/pagar', urlencodedParser, function(req, res){
     
 })
 
-app.post('/webhook', urlencodedParserfunction, (req, res) {
+app.post('/webhook', urlencodedParserfunction, function (req, res) {
     console.log(req.body)
     console.log(req.query)
-    res.status(201);
+    res.status(201)
     
 })
 
