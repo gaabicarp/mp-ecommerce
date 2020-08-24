@@ -11,7 +11,8 @@ mercadopago.configure({
 var app = express();
 
 var urlencodedParser = bodyParser.urlencoded({extended : true})
-
+app.use(bodyParser.json());
+app.use(express.json())
 
  
 app.engine('handlebars', exphbs());
