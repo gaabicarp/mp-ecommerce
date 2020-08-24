@@ -98,8 +98,7 @@ app.post('/pagar', urlencodedParser, function(req, res){
 })
 
 app.post('/webhook', urlencodedParser, function (req, res) {
-    console.log(req.body)
-    console.log(req.query)
+    console.log('res', req.body)
     res.status(200).send('some text')
     
 })
@@ -114,97 +113,13 @@ app.listen((process.env.PORT || 3000), function(){
 
 
 
-// mercadopagoIpnResponse = {
-//          body: {
-//             acquirer_reconciliation: [],
-//             additional_info: {
-//                 available_balance: null,
-//                 ip_address: '181.230.108.172',
-//                 nsu_processadora: null
-//             },
-//             authorization_code: '1234567',
-//             binary_mode: false,
-//             brand_id: null,
-//             call_for_authorize_id: null,
-//             captured: true,
-//             card: {
-//                 cardholder: [Object],
-//                 date_created: '2020-08-23T19:53:08.000-04:00',
-//                 date_last_updated: '2020-08-23T19:53:08.000-04:00',
-//                 expiration_month: 11,
-//                 expiration_year: 2025,
-//                 first_six_digits: '503175',
-//                 id: null,
-//                 last_four_digits: '0604'
-//             },
-//             charges_details: [],
-//             collector_id: 469485398,
-//             corporation_id: null,
-//             counter_currency: null,
-//             coupon_amount: 0,
-//             currency_id: 'ARS',
-//             date_approved: '2020-08-23T19:53:08.000-04:00',
-//             date_created: '2020-08-23T19:53:08.000-04:00',
-//             date_last_updated: '2020-08-23T19:53:08.000-04:00',
-//             date_of_expiration: null,
-//             deduction_schema: null,
-//             description: 'Samsung',
-//             differential_pricing_id: null,
-//             external_reference: 'gaabicarp@gmail.com',
-//             fee_details: [ [Object] ],
-//             id: 9354235378,
-//             installments: 1,
-//             integrator_id: 'dev_24c65fb163bf11ea96500242ac130004',
-//             issuer_id: '3',
-//             live_mode: true,
-//             marketplace_owner: null,
-//             merchant_account_id: null,
-//             merchant_number: null,
-//             metadata: {},
-//             money_release_date: '2020-08-23T19:53:08.000-04:00',
-//             money_release_schema: null,
-//             notification_url: 'https://mpgabi.herokuapp.com/webhook',
-//             operation_type: 'regular_payment',
-//             order: { id: '1707392928', type: 'mercadopago' },
-//             payer: {
-//                 email: 'test_user_63274575@testuser.com',
-//                 entity_type: null,
-//                 first_name: 'Lalo',
-//                 id: '471923173',
-//                 identification: [Object],
-//                 last_name: 'Landa',
-//                 operator_id: null,
-//                 phone: [Object],
-//                 type: 'guest'
-//             },
-//             payment_method_id: 'master',
-//             payment_type_id: 'credit_card',
-//             platform_id: null,
-//             pos_id: null,
-//             processing_mode: 'aggregator',
-//             refunds: [],
-//             shipping_amount: 0,
-//             sponsor_id: null,
-//             statement_descriptor: 'MERPAGO',
-//             status: 'approved',
-//             status_detail: 'accredited',
-//             store_id: null,
-//             taxes_amount: 0,
-//             transaction_amount: 15000,
-//             transaction_amount_refunded: 0,
-//             transaction_details: {
-//                 acquirer_reference: null,
-//                 external_resource_url: null,
-//                 financial_institution: null,
-//                 installment_amount: 15000,
-//                 net_received_amount: 13912.5,
-//                 overpaid_amount: 0,
-//                 payable_deferral_period: null,
-//                 payment_method_reference_id: '1234567',
-//                 total_paid_amount: 15000
-//             }
-//         },
-//         status: 200,
-//         id: '9354235378',
-//         topic: 'payment'
-//     }
+//  {
+//      action: 'payment.created',
+//      api_version: 'v1',
+//      data: { id: '9355011001' },
+//      date_created: '2020-08-24T01:16:36Z',
+//      id: 6322825366,
+//      live_mode: true,
+//      type: 'payment',
+//      user_id: '469485398'
+// }
