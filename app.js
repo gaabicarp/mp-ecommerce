@@ -98,7 +98,7 @@ app.post('/pagar', urlencodedParser, function(req, res){
 })
 
 app.post('/webhook', urlencodedParser, function (req, res) {
-    console.log('res', req.body)
+    console.log('res', JSON.stringify(req.body))
     res.status(200).send('some text')
     
 })
